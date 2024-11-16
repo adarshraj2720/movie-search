@@ -3,12 +3,12 @@ import axios from "axios";
 
 const MovieModal = ({ movie, onClose }) => {
   const [details, setDetails] = useState(null);
-  const API_KEY = "3591f6cf"; // Replace with your OMDB API key.
+  const API_KEY = "3591f6cf"; 
 
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await axios.get(
-        `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+        `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
       );
       setDetails(response.data);
     };

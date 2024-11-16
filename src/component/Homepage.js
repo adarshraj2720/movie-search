@@ -8,13 +8,13 @@ const HomePage = () => {
   const [query, setQuery] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const API_KEY = "3591f6cf"; // Replace with your OMDB API key.
+  const API_KEY = "3591f6cf"; 
 
   // Fetch popular movies
   useEffect(() => {
     const fetchPopularMovies = async () => {
       const response = await axios.get(
-        `http://www.omdbapi.com/?s=batman&apikey=${API_KEY}` // Example query for popular movies
+        `https://www.omdbapi.com/?s=batman&apikey=${API_KEY}`
      
       );
       setMovies(response.data.Search || []);
@@ -26,7 +26,7 @@ const HomePage = () => {
   const handleSearch = async () => {
     if (!query) return;
     const response = await axios.get(
-      `http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
+      `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
     );
     setMovies(response.data.Search || []);
   };
